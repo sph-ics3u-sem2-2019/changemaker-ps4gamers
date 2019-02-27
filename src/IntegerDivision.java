@@ -15,6 +15,7 @@ public class IntegerDivision {
 		System.out.println("Regular division: "+quotient);
 		System.out.println("Integer division: "+q);
 		System.out.println("Remainder: "+r);
+		in.close();
 	}
 
 }
