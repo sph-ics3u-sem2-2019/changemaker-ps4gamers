@@ -18,8 +18,8 @@ public class Main {
 		System.out.println("How much was paid?");
 		double payment=in.nextDouble();
 		//TODO: Here is where your code goes
-		double sum = cost-payment;
-		System.out.println(cost+" - "+payment+" = "+sum);
+		double sum = payment-cost;
+		System.out.println(payment+" - "+cost+" = "+sum);
 		// double sum=in.nextDouble;
 		
 		int hundreds, fifties, twenties, tens, fives, toonies, loonies,
@@ -45,22 +45,40 @@ public class Main {
 		sum= sum % .25;
 		dimes = (int)(sum/ .10);
 	    sum= sum % .10;
-		nickels = (int)(sum/ .5);
-		sum= sum % .5;
+		nickels = (int)(sum/ .05);
+		sum= sum % .05;
 
-		// System.out.println(sum+ " cents in coins given as:");
-		System.out.println(hundreds + "hundreds");
-		System.out.println(fifties + "fifties");
-		System.out.println(twenties + "twenties");
-		System.out.println(tens + "tens");
-		System.out.println(fives + "fives");
-		System.out.println(toonies + "toonies");
-		System.out.println(loonies + "loonies");
+		System.out.println(sum);
+		System.out.println(hundreds + " hundreds");
+		System.out.println(fifties + " fifties");
+		System.out.println(twenties + " twenties");
+		System.out.println(tens + " tens");
+		System.out.println(fives + " fives");
+		System.out.println(toonies + " toonies");
+		System.out.println(loonies + " loonies");
 	    System.out.println(quarters + " quarters");
 	    System.out.println(dimes + " dimes");
 	    System.out.println(nickels + " nickels");
-		
+	
+	    if (sum>=0.03) {
+	    	sum = 0.05;
+	    	nickels=nickels+1;
+	    	//if(nickels==2) {
+	    		//nickels=0;
+	    		//dimes=dimes+1;
+	    	//}
+	    } if (sum>=0.08){
+	    	  sum= 0.10;
+	    	  dimes=dimes+1;
+	    }
+	    else if (sum<=0.07){
+	    	nickels=nickels+1;
+	    }
+	    
+	    
 	    in.close();
+	    
+	    
 	}
 
 }
